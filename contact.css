@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    height: 100%;
+    display: flexbox;
+    justify-content: center;
+    background-image: url(image/independent_monument_1_\(1\).jpg);
+    backdrop-filter: brightness(50%);
+    background-position: center;
+    background-size: cover;
+}
+.mainct{
+    display: flex;
+    justify-content: space-around;
+    min-height: 100vh; 
+    width: 100%;
+    position: relative;
+}
+
+nav{
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;;
+    background-color: transparent;
+    
+   
+}
+nav img{
+    height: 100px;
+}
+
+
+
+.nav-links ul li button {
+    border: none;
+    background-color: transparent;
+    color: white; /* Set the text color to white */
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links {
+    background: transparent;
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.signin ul li{
+    list-style: none;
+}
+
+.signin ul li button{
+    width: 100px;
+    background-size: cover;
+    border-radius: 50px;
+}
+
+.box{
+    height: 15px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    background: transparent;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.box:hover input{
+    width: 400px;
+}
+
+.box input{
+    width: 0;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: 0.8s;
+    background: transparent;
+}
+
+.box img{
+    width: 20px;
+}
+
+h1{
+    text-align: center;
+    background: transparent;
+    color: white;
+}
+
+p{
+    text-align: center;
+    background: transparent;  
+    color: white;
+}
+
+/* Add your styles for the 'active' class, e.g., underline */
+button.active {
+    text-decoration: underline;
+}
+
+.nav-links ul li button:after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    width: 0;  /* Start with a width of 0 */
+    left: 50%;
+    bottom: 1px;
+    transition: 0.5s;
+    transform: translateX(-50%);  /* Center the underline */
+}
+
+.nav-links ul li button:hover{
+    color: #ffffff;
+}
+
+.nav-links ul li button:hover:after{
+    width: 100%;
+}
+
+.nav-links ul li button {
+    border: none;
+    background-color: transparent;
+    color: white; 
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.nav-links ul li button.about-btn:after{    
+    content: "";
+    position: absolute;
+    background-color: black;
+    height: 2px;
+    width: 100%;  /* Start with a width of 0 */
+    left: 50%;
+    bottom: 1px;
+    transition: 0.5s;
+    transform: translateX(-50%);  /* Center the underline */
+} 
+
+/* CSS styles for each image container */
+.mainct .pic {
+    text-align: center;
+}
+
+/* CSS styles for the images within the container */
+.mainct .pic img {
+    width: 100px; /* Set a specific width for all images */
+    height: auto; /* Automatically adjust height to maintain aspect ratio */
+    margin: 10px; /* Add margin between images */
+
+}
+
+/* CSS styles for text under and near the images */
+.mainct .pic p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+

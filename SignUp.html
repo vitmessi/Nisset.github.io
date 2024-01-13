@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta username="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In and Sign Up Form - Easy Tutorials</title>
+    <link rel="stylesheet" href="asd.css">
+    <script src="https://kit.fontawesome.com/b83f4cf4ae.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+    
+    <a href=""><img src="image/Logo.png" alt=""></a>
+    <div class="nav-links">
+        <ul>
+          <li><button onclick="location.href='SignUp.html'">HOME</li>
+          <li><button onclick="location.href='About us2.html'">ABOUT US</li>
+          <li><button onclick="location.href='contact2.html'">CONTACT</li>
+          <li><button onclick="location.href='SignUp.html'">SAVED JOBS</li>
+        </ul>
+    </div>
+</nav>
+
+
+
+<section class="mainct">
+
+  <div class="container">
+    <div id="login-box">
+      <div class="left">
+        <h1 id="title">Sign Up</h1>
+        <div class="input-group">
+          <div class="input-field">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" id="username" placeholder="Username">
+          </div>         
+      
+          <div class="input-field">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="text" id="email" name="email" placeholder="Email" />
+          </div>
+      
+          <div class="input-field">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="password" name="password" placeholder="Password" />
+          </div>
+
+          <div class="btn-field">
+            <button type="submit" id="signUp" name="signup_submit" value="Sign Up">Sign Up</button>
+             <button type="button" onclick="location.href='login.html'" id="signIn" class="disable">Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+    <div class="wrapper">
+      
+        <div id="search-container">
+            <input type="search" id="search-input"placeholder="Search job name here.."/>
+            <button id="search">Search</button>
+        </div>
+    </div>
+</section>
+</body>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+    import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyC8-K2PAtw9gG23xCc-ILUZAokQTfj_RWs",
+      authDomain: "sign-up-1de40.firebaseapp.com",
+      databaseURL: "https://sign-up-1de40-default-rtdb.firebaseio.com",
+      projectId: "sign-up-1de40",
+      storageBucket: "sign-up-1de40.appspot.com",
+      messagingSenderId: "727620855754",
+      appId: "1:727620855754:web:7e92daeb3b1bceba6b5133"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const auth = getAuth();
+  
+    signUp.addEventListener('click',(e) =>{
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var username = document.getElementById('username').value;
+  
+      createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed up 
+      const user = userCredential.user;
+  
+      set(ref(database, 'users/' + user.uid),{
+        username: username,
+        email: email
+      })
+      alert('user created!');
+      window.location.href="Login.html";
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+  
+      alert(errorMessage);
+      // ..
+    });
+    });
+</script>
+</html>

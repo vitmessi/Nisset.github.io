@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta name="viewport" content="with=device-width,initial-scale=1.0">
+        <title>NissetArea</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;1,800&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <nav>
+    
+      <a href=""><img src="image/Logo.png" alt=""></a>
+      <div class="nav-links">
+        <ul>
+          <li><button onclick="location.href='index.html'">HOME</li>
+          <li><button onclick="location.href='About us.html'">ABOUT US</li>
+          <li><button onclick="location.href='contact.html'">CONTACT</li>
+          <li><button onclick="location.href='Save job.html'">SAVED JOBS</li>
+        </ul>
+      </div>
+
+      <div class="container">
+        <div class="card1">
+            <h2>Profile Page</h2>
+            <button onclick="logOut()" style="float: right">LogOut</button>
+            <hr>
+            <h3>Welcome</h3>
+            <h4>Name:
+                <script>
+                    document.write(localStorage.setItem("username",name));
+                </script>
+            </h4>
+            <h6>Your Email is:
+                <script>
+                    document.write(localStorage.setItem("email",email));
+                </script>
+            </h6>
+          </div>
+          <script>
+            function logOut(){
+            localStorage.removeItem("name");
+            localStorage.removeItem("email");
+            window.location.href="SignUp.html"
+          }
+          </script>
+          
+        </div>
+  
+  </nav>
+      <section class="mainct">
+        <div class="wrapper">
+      
+          <div id="search-container">
+            <input type="search" id="search-input"placeholder="Search job name here.."/>
+            <button id="search">Search</button>
+            <!--  ffffffffffffff        -->
+            
+            <!--  ffffffffffffff        -->
+          </div>
+          <div id="buttons">
+            <button class="button-value" onclick="filterProduct('all')">All</button>
+            <button class="button-value" onclick="filterProduct('ContentCreation')">ContentCreation</button>
+            <button class="button-value" onclick="filterProduct('Technology')">Technology</button>
+            <button class="button-value" onclick="filterProduct('PublicRelations')">PublicRelations</button>
+            <button class="button-value" onclick="filterProduct('Healthcare')">Healthcare</button>
+            <button class="button-value" onclick="filterProduct('None')">None</button>
+            <!-- <button class="favicon">
+              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                <path d="M17.947 2.053a5.209 5.209 0 0 0-3.793-1.53A6.414 6.414 0 0 0 10 2.311 6.482 6.482 0 0 0 5.824.5a5.2 5.2 0 0 0-3.8 1.521c-1.915 1.916-2.315 5.392.625 8.333l7 7a.5.5 0 0 0 .708 0l7-7a6.6 6.6 0 0 0 2.123-4.508 5.179 5.179 0 0 0-1.533-3.793Z"/>
+              </svg>
+            </button> -->
+              </div>
+          </div>
+          <div id="products"></div>
+        </div>
+<script src="searchtest.js">
+  
+
+</script>
+
+</body>
+</html>
